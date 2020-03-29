@@ -1,0 +1,31 @@
+@media screen and (max-width: 40.5em) {
+    .Header{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        width: 100vw;
+        height: 10vh;
+        display: block;
+        background-color: black;
+    }
+    ul{
+        list-style-type: none;
+    }
+    li{
+        display: inline;
+    }
+    .left{
+        position: absolute;
+        left: -10px;
+    }
+    .right{
+        position: absolute;
+        right: -10px;
+    }
+    .responsive{
+        width: 100%;
+        max-width: 100px;
+        height: auto;
+        max-height: 60px;
+    }
+    }

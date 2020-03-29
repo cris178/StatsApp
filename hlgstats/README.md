@@ -1,3 +1,7 @@
+# HLG Stats
+
+This web application show cases the esports team's statistics. The application showcases an individual player's stats or a team's stats. Using React and SwipeJS, the site was made for mobile first.  
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
