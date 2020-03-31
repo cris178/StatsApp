@@ -1,6 +1,8 @@
 import React from 'react';
-import "./Header.css"
+import "./Header.css";
+import "./Hamburger/Hamburger";
 import Logo from './Images/HLG_LOGO.png'
+import Hamburger from './Hamburger/Hamburger';
 
 class Header extends React.Component{
 
@@ -9,8 +11,9 @@ class Header extends React.Component{
         return(
             <div className= "Header">
                 <ul>
-                    <li className="left"><img  classname = "responsive" src={Logo} alt="Highlander Gaming Logo" width="100px" height="60px"></img></li>
-                    <li className="right"><img classname = "responsive" src={Logo} alt="Menu" alt="Highlander Gaming Logo"  width="100px" height="60px"></img></li>
+                    <h1 className="left ">HLG <span className="blue">Stats</span></h1>
+                    <Hamburger />
+                   
                 </ul>
             </div>
         );
