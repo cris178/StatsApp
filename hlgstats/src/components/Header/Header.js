@@ -1,7 +1,6 @@
 import React from 'react';
 import "./Header.css";
 import "./Hamburger/Hamburger";
-import Logo from './Images/HLG_LOGO.png'
 import Hamburger from './Hamburger/Hamburger';
 
 class Header extends React.Component{
