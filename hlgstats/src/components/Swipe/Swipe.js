@@ -37,7 +37,7 @@ const Swipe = ()=>{
 
           <div className="slide">
             <div className="swiperImage" data-swiper-parallax={parallaxAmount}>
-              <img src={image1} className="responsive" width="100%" height="250px"/>
+              <img src={image1} className="responsive" width="100%"/>
             </div>
             <div className="title" data-swiper-parallax="-100">
               League of Legends A Team
@@ -52,7 +52,7 @@ const Swipe = ()=>{
          
           <div className="slide">
             <div className="swiperImage" data-swiper-parallax={parallaxAmount}>
-              <img src={image1} className="responsive" width="300px" height="250px" />
+              <img src={image1} className="responsive" width="100%" />
             </div>
             <div className="title" data-swiper-parallax="-100">
               League of Legends A Team
@@ -68,7 +68,7 @@ const Swipe = ()=>{
 
           <div className="slide">
             <div className="swiperImage" data-swiper-parallax={parallaxAmount}>
-              <img src={image1} className="responsive" width="300px" height="250px" />
+              <img src={image1} className="responsive" width="100%"  />
             </div>
             <div className="title" data-swiper-parallax="-100">
               League of Legends A Team
@@ -83,7 +83,7 @@ const Swipe = ()=>{
 
           <div className="slide">
             <div className="swiperImage" data-swiper-parallax={parallaxAmount}>
-              <img src={image1} className="responsive" width="300px" height="250px" />
+              <img src={image1} className="responsive" width="100%" />
             </div>
             <div className="title" data-swiper-parallax="-100">
               League of Legends A Team
@@ -98,7 +98,7 @@ const Swipe = ()=>{
 
           <div className="slide">
             <div className="swiperImage" data-swiper-parallax={parallaxAmount}>
-              <img src={image1} className="responsive" width="300px" height="250px" />
+              <img src={image1} className="responsive" width="100%" />
             </div>
             <div className="title" data-swiper-parallax="-100">
               League of Legends A Team
