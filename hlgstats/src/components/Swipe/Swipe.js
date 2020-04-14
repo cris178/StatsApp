@@ -3,11 +3,11 @@ import "./Swipe.css";
 import Swiper from 'react-id-swiper';
 //import 'react-id-swiper/lib/styles/css/swiper.css'
 import 'swiper/css/swiper.css';
-import image1 from '../Images/HLG_LOGO.png';
+import image1 from './Images/HLG_League_Banner.png';
 
 const Swipe = ()=>{
     const params = {
-      centeredSlide: true,
+      centeredSlides: true,
       parallax: true,
         pagination: {
           el: '.swiper-pagination',
@@ -18,7 +18,7 @@ const Swipe = ()=>{
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
         },
-        spaceBetween: 30
+        spaceBetween: 0
       }
 
       const [parallaxSwiper, setParallaxSwiper] = useState(null);
@@ -32,10 +32,13 @@ const Swipe = ()=>{
       }
      
       return(
-        <Swiper {...params} getSwiper={setParallaxSwiper}>
+        <Swiper className="Swiper" {...params} getSwiper={setParallaxSwiper}>
 
 
           <div className="slide">
+            <div className="swiperImage" data-swiper-parallax={parallaxAmount}>
+              <img src={image1} className="responsive" width="100%" height="250px"/>
+            </div>
             <div className="title" data-swiper-parallax="-100">
               League of Legends A Team
             </div>
@@ -43,14 +46,14 @@ const Swipe = ()=>{
             <div className="text" data-swiper-parallax="-300" data-swiper-parallax-duration="600">
               <p>{result} </p>
             </div>
-            <div data-swiper-parallax-opacity="0.5">Ready for a swell battle!</div>
-            <div data-swiper-parallax-scale="0.15">I will change scale</div>
-            <div data-swiper-parallax={parallaxAmount}>
-              <img src={image1} className="responsive" width="300px" height="250px" />
-            </div>
+            <div className="phraseOne"  data-swiper-parallax-opacity="0.5">Ready for a swell battle!</div>
+            <div className="phraseTwo"  data-swiper-parallax-scale="0.15">I will change scale</div>
           </div>
          
           <div className="slide">
+            <div className="swiperImage" data-swiper-parallax={parallaxAmount}>
+              <img src={image1} className="responsive" width="300px" height="250px" />
+            </div>
             <div className="title" data-swiper-parallax="-100">
               League of Legends A Team
             </div>
@@ -58,15 +61,15 @@ const Swipe = ()=>{
             <div className="text" data-swiper-parallax="-300" data-swiper-parallax-duration="600">
               <p>{result} </p>
             </div>
-            <div data-swiper-parallax-opacity="0.5">Ready for a swell battle!</div>
-            <div data-swiper-parallax-scale="0.15">I will change scale</div>
-            <div data-swiper-parallax={parallaxAmount}>
-              <img src={image1} className="responsive" width="300px" height="250px" />
-            </div>
+            <div className="phraseOne" data-swiper-parallax-opacity="0.5">Ready for a swell battle!</div>
+            <div className="phraseTwo" data-swiper-parallax-scale="0.15">I will change scale</div>
           </div>
 
 
           <div className="slide">
+            <div className="swiperImage" data-swiper-parallax={parallaxAmount}>
+              <img src={image1} className="responsive" width="300px" height="250px" />
+            </div>
             <div className="title" data-swiper-parallax="-100">
               League of Legends A Team
             </div>
@@ -74,14 +77,14 @@ const Swipe = ()=>{
             <div className="text" data-swiper-parallax="-300" data-swiper-parallax-duration="600">
               <p>{result} </p>
             </div>
-            <div data-swiper-parallax-opacity="0.5">Ready for a swell battle!</div>
-            <div data-swiper-parallax-scale="0.15">I will change scale</div>
-            <div data-swiper-parallax={parallaxAmount}>
-              <img src={image1} className="responsive" width="300px" height="250px" />
-            </div>
+            <div className="phraseOne" data-swiper-parallax-opacity="0.5">Ready for a swell battle!</div>
+            <div className="phraseTwo" data-swiper-parallax-scale="0.15">I will change scale</div>
           </div>
 
           <div className="slide">
+            <div className="swiperImage" data-swiper-parallax={parallaxAmount}>
+              <img src={image1} className="responsive" width="300px" height="250px" />
+            </div>
             <div className="title" data-swiper-parallax="-100">
               League of Legends A Team
             </div>
@@ -89,14 +92,14 @@ const Swipe = ()=>{
             <div className="text" data-swiper-parallax="-300" data-swiper-parallax-duration="600">
               <p>{result} </p>
             </div>
-            <div data-swiper-parallax-opacity="0.5">Ready for a swell battle!</div>
-            <div data-swiper-parallax-scale="0.15">I will change scale</div>
-            <div data-swiper-parallax={parallaxAmount}>
-              <img src={image1} className="responsive" width="300px" height="250px" />
-            </div>
+            <div className="phraseOne" data-swiper-parallax-opacity="0.5">Ready for a swell battle!</div>
+            <div className="phraseTwo" data-swiper-parallax-scale="0.15">I will change scale</div>
           </div>
 
           <div className="slide">
+            <div className="swiperImage" data-swiper-parallax={parallaxAmount}>
+              <img src={image1} className="responsive" width="300px" height="250px" />
+            </div>
             <div className="title" data-swiper-parallax="-100">
               League of Legends A Team
             </div>
@@ -104,11 +107,8 @@ const Swipe = ()=>{
             <div className="text" data-swiper-parallax="-300" data-swiper-parallax-duration="600">
               <p>{result} </p>
             </div>
-            <div data-swiper-parallax-opacity="0.5">Ready for a swell battle!</div>
-            <div data-swiper-parallax-scale="0.15">I will change scale</div>
-            <div data-swiper-parallax={parallaxAmount}>
-              <img src={image1} className="responsive" width="300px" height="250px" />
-            </div>  
+            <div className="phraseOne" data-swiper-parallax-opacity="0.5">Ready for a swell battle!</div>
+            <div className="phraseTwo" data-swiper-parallax-scale="0.15">I will change scale</div>
           </div>
 
         </Swiper>
