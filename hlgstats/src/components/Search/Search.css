@@ -1,0 +1,61 @@
+@media screen and (max-width: 40.5em) {
+    .Search{
+        
+        width: 100vw;
+        height: 25vh;
+        
+    }
+
+    input::placeholder {
+        color: charcoal;
+        font-size: 1.5em;
+    }
+
+    .round{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1em;
+        border-radius: 5px;
+        border: 1px #000 solid;
+        padding: 5px 5px 5px 25px;
+        width: 90vw;
+        height: 2.5em;
+    }   
+    textarea:focus,
+    input:focus,
+    .form-control:focus,
+    *:focus {
+    outline: none;
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    }
+
+    .corner {
+        position: absolute;
+        top: .3em;
+        right: .15em;
+        height: 40px;
+        width: 40px;
+        z-index: 10;
+        font-size: 1.8em;
+        -webkit-transform: rotate(45deg); 
+        -moz-transform: rotate(45deg); 
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+         /* Set the bg image here. with "no-repeat" */
+    }
+    .corner:focus{
+       background-color: transparent;
+       position: absolute;
+       font-size: 1.8em;
+       padding: 0px;
+       border: none;
+       -webkit-transform: rotate(45deg); 
+       -moz-transform: rotate(45deg); 
+       -o-transform: rotate(45deg);
+       transform: rotate(45deg);
+    }
+
+}

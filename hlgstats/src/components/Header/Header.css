@@ -4,8 +4,9 @@
         padding: 0;
         border: 0;
         width: 100vw;
-        height: 10vh;
+        height: 8vh;
         display: block;
+        
         
     }
     .Header > h1{
@@ -29,4 +30,15 @@
         position: absolute;
         
     }
+    .searchIcon{
+        position: absolute;
+        right:1.5em;
+        top:.1em;
+        font-size: 1.8em;
+        -webkit-transform: rotate(45deg); 
+        -moz-transform: rotate(45deg); 
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
     }
+
+}
