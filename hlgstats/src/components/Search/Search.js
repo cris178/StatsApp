@@ -7,7 +7,7 @@ class Search extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            username: ""
+            username: "",
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -15,8 +15,9 @@ class Search extends React.Component{
 
     componentDidMount() {
         console.log("Search Bar has Mounted.");
+        
     }
-
+    
 
     handleChange(event) {
         event.preventDefault();
@@ -39,9 +40,9 @@ class Search extends React.Component{
 
     render() {
         return (
-          <div className="Search">
-            <form id="search-form">
-                <div class="searchBar">
+          <div className="Search"  >
+            <form id="search-form" >
+                <div className="searchBar">
                     <input type="text" name="searchBar" className="round" placeholder="Search IGN" onChange={this.handleChange}/>
                     <input type="submit" className="corner" value="&#9906;" onClick={this.handleSubmit}/>
                 </div>

@@ -1,9 +1,23 @@
 @media screen and (max-width: 40.5em) {
     .Search{
-        
+        position: absolute;
         width: 100vw;
         height: 25vh;
-        
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+        animation: move .5s;   
+    }
+
+    .fade-out{
+        animation: move .5s;  
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s;
+        opacity: 0;
+        visibility: hidden; 
     }
 
     input::placeholder {
@@ -56,6 +70,16 @@
        -moz-transform: rotate(45deg); 
        -o-transform: rotate(45deg);
        transform: rotate(45deg);
+    }
+
+    @keyframes move{
+        0% {top:-60px;}
+        100%{top:0;}
+    }
+
+    @keyframes leave{
+        0% {top:0;}
+        100%{top:-60;}
     }
 
 }

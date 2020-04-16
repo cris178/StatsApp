@@ -11,13 +11,13 @@ const Swipe = ()=>{
       parallax: true,
         pagination: {
           el: '.swiper-pagination',
-          type: 'bullets',
+          //type: 'bullets',
           clickable: true
         },
-        navigation: {
+        /*navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
-        },
+        },*/
         spaceBetween: 0
       }
 
@@ -25,9 +25,9 @@ const Swipe = ()=>{
       const parallaxAmount = parallaxSwiper ? parallaxSwiper.width * 0.95 : 0;
 
       const start = image1.lastIndexOf("/");
-      const last = image1. indexOf(".");
+      const last = image1.indexOf(".");
       var result = image1;
-      if(start && last != -1){
+      if(start && last !== -1){
         result = image1.substring(start+1,last);
       }
      
@@ -37,7 +37,7 @@ const Swipe = ()=>{
 
           <div className="slide">
             <div className="swiperImage" data-swiper-parallax={parallaxAmount}>
-              <img src={image1} className="responsive" width="100%"/>
+              <img src={image1} className="responsive" width="100%" alt="HLG Esports League of Legends"/>
             </div>
             <div className="title" data-swiper-parallax="-100">
               League of Legends A Team
@@ -52,7 +52,7 @@ const Swipe = ()=>{
          
           <div className="slide">
             <div className="swiperImage" data-swiper-parallax={parallaxAmount}>
-              <img src={image1} className="responsive" width="100%" />
+              <img src={image1} className="responsive" width="100%" alt="HLG Esports CSGO"/>
             </div>
             <div className="title" data-swiper-parallax="-100">
               League of Legends A Team
@@ -68,7 +68,7 @@ const Swipe = ()=>{
 
           <div className="slide">
             <div className="swiperImage" data-swiper-parallax={parallaxAmount}>
-              <img src={image1} className="responsive" width="100%"  />
+              <img src={image1} className="responsive" width="100%"  alt="HLG Esports Rainbow Six"/>
             </div>
             <div className="title" data-swiper-parallax="-100">
               League of Legends A Team
@@ -83,7 +83,7 @@ const Swipe = ()=>{
 
           <div className="slide">
             <div className="swiperImage" data-swiper-parallax={parallaxAmount}>
-              <img src={image1} className="responsive" width="100%" />
+              <img src={image1} className="responsive" width="100%" alt="HLG Esports League of Legends" />
             </div>
             <div className="title" data-swiper-parallax="-100">
               League of Legends A Team
