@@ -12,7 +12,7 @@
 /build
 
 #Ignore API Folder
-/src/API
+API.js
 
 # misc
 .DS_Store
