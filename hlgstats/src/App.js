@@ -2,15 +2,39 @@ import React from 'react';
 import Header from './components/Header/Header';
 import Swipe from './components/Swipe/Swipe';
 import logo from './logo.svg';
+import {API} from "./RIOTAPI/RIOTAPI"
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Swipe />
-    </div>
-  );
+class App extends React.Component{
+  
+  constructor(props){
+    super(props);
+    this.state={
+      startscreen: 1,
+      stats: 0,
+      keys: API
+    }
+
+
+  }
+
+  
+  componentDidMount(){
+    console.log(this.state.keys);
+  }
+  render(){
+    const displayScreen = <div>
+                          <Header />
+                          <Swipe />
+                        </div>;
+    let keygen = this.state.keys.toString();
+    return (
+                        <div className="App">
+                          {displayScreen}
+                          <p>Hello world {keygen}</p>
+                        </div>
+    );
+  }
 }
 
 {/*
