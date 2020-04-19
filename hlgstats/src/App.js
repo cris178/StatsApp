@@ -12,7 +12,7 @@ class App extends React.Component{
     this.state={
       startscreen: 1,
       stats: 0,
-      keys: API
+      keys: "0123"
     }
 
 
@@ -20,18 +20,23 @@ class App extends React.Component{
 
   
   componentDidMount(){
+    //Enter Summoner Name;
     console.log(this.state.keys);
+    const getSummoner = firebase.functions().httpsCallable('getSummoner');
+    getSummoner().then(results => {
+      console.log(results.data);
+    });
   }
   render(){
     const displayScreen = <div>
                           <Header />
                           <Swipe />
                         </div>;
-    let keygen = this.state.keys.toString();
+    
     return (
                         <div className="App">
                           {displayScreen}
-                          <p>Hello world {keygen}</p>
+                          <p>Hello world</p>
                         </div>
     );
   }
