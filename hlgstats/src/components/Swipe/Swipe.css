@@ -6,12 +6,15 @@
         display: flex;
         overflow: hidden;
         position: relative;
+        width: 100vw;
         height: 200px !important;
-        
+    }
+    img{
+        border-radius: 5px;
     }
     .swiperImage{
         height: 100%;
-        width: 100%;
+        width: 95%;
         position: absolute;
         top:0;
         bottom:0;
@@ -21,6 +24,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        
     }
     .title{
         z-index: 1;

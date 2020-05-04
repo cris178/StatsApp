@@ -5,9 +5,13 @@ import logo from './logo.svg';
 import {API} from "./RIOTAPI/RIOTAPI"
 import './App.css';
 import firebase from "./firebase";
+import MatchHistory from "./components/MatchHistory/MatchHistory";
+import Profile from "./components/Profile/Profile"; 
 
 class App extends React.Component{
   
+  // Key
+  //7A1161E44016535BB62A3235C65B77C6
   constructor(props){
     super(props);
     this.state={
@@ -16,13 +20,33 @@ class App extends React.Component{
       keys: "0123"
     }
 
-    this.statusCheck = this.statusCheck.bind(this);
+    
   }
 
   
-  componentDidMount(){
+  async componentDidMount(){
     //Enter Summoner Name;
     console.log(this.state.keys);
+
+    //const response = await fetch('https://ae6gzj3iye.execute-api.us-east-2.amazonaws.com/RiotStage').catch(()=>{return("Errror")});
+    
+    /*
+    const world = firebase.functions().httpsCallable('hello');
+    world().then(result =>{
+      console.log(result.data);
+      return("Finished without error");
+    }).catch(()=>{
+      console.log("catch");
+      return("Caught and error");
+    })*/
+    /*reply().then(()=>{
+      console.log("Local Promise: " )
+      console.log(reply.data);
+      return(console.log("Complete"));
+    }).catch(()=>{
+      return(console.log("Error Local"));
+    })*/
+    /*
     fetch("")
     .then(this.statusCheck)
     .then(function(res){
@@ -34,6 +58,7 @@ class App extends React.Component{
       }).catch((err) =>{
         console.log("Failed API retrieval")
       });
+      */
     /*
     const world = firebase.functions().httpsCallable('hello');
 
@@ -56,29 +81,29 @@ class App extends React.Component{
     
   }
 
-  statusCheck(response) {
-    console.log("In Status Check");
-    if (response.status != 200) {
-      // If HTTP code is not 200 throw an error
-      var error = new Error(response.statusText);
-      error.response = response;
-      throw error;
-    } else {
-      // Return the response if the API gives a code of 200
-      return response;
-    }
-  }
+  
 
   render(){
-    const displayScreen = <div>
+    let displayScreen = <div>
                           <Header />
                           <Swipe />
                         </div>;
+    const checkScreen = this.state.startscreen;
+    if(checkScreen === 1){
+
+    }else if(checkScreen === 2){
+      displayScreen = <div>
+                        <MatchHistory />
+                        <Profile />
+                      </div>
+    }
     
     return (
                         <div className="App">
                           {displayScreen}
-                          <p>Hello world</p>
+                          <h2>League</h2>
+                          <h2>Valorant</h2>
+                          <h2>Rainbow Six</h2>
                         </div>
     );
   }
