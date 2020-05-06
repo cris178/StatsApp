@@ -32,6 +32,7 @@ class Header extends React.Component{
           ign: arg,
           clicked: 0
         });
+        this.props.passUp(arg);
     }
 
     render(){

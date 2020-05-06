@@ -2,7 +2,6 @@ import React from 'react';
 import Header from './components/Header/Header';
 import Swipe from './components/Swipe/Swipe';
 import logo from './logo.svg';
-import {API} from "./RIOTAPI/RIOTAPI"
 import './App.css';
 import firebase from "./firebase";
 import MatchHistory from "./components/MatchHistory/MatchHistory";
@@ -81,11 +80,19 @@ class App extends React.Component{
     
   }
 
-  
+  getIGN(arg){
+    let ending = "?key1=".concat(arg);
+    console.log(ending);
+    fetch("aws"+ending).then(response=>response.json()).then(json=>{
+      console.log(json.body);
+    }).catch(()=>{
+      console.log("Error Occured");
+    })
+  }
 
   render(){
     let displayScreen = <div>
-                          <Header />
+                          <Header passUp={this.getIGN}/>
                           <Swipe />
                         </div>;
     const checkScreen = this.state.startscreen;
