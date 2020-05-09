@@ -1,0 +1,7 @@
+@media screen and (max-width: 40.5em) {
+    .MatchHistory{
+        width: 100vw;
+        order:2;
+        border-bottom: black;
+    }
+}

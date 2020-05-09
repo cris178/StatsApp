@@ -9,4 +9,11 @@ body{
   color: #698EBF;
   margin-left: -.35em;
 }
+@media screen and (max-width: 40.5em) {
+  .flexInit{
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+
 

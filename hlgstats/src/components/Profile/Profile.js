@@ -1,4 +1,5 @@
 import React from "react";
+import "./Profile.css"
 
 
 class MatchHistory extends React.Component{
@@ -12,8 +13,8 @@ class MatchHistory extends React.Component{
 
     render(){
         return(
-            <div>
-               
+            <div className="Profile">
+               <h1>Name</h1>
             </div>
         );
     }

@@ -6,6 +6,7 @@ import './App.css';
 import firebase from "./firebase";
 import MatchHistory from "./components/MatchHistory/MatchHistory";
 import Profile from "./components/Profile/Profile"; 
+import axios from "axios";
 
 class App extends React.Component{
   
@@ -16,101 +17,67 @@ class App extends React.Component{
     this.state={
       startscreen: 1,
       stats: 0,
-      keys: "0123"
+      accID:"temp",
+      matchHistory:[]
     }
-
-    
+    this.getIGN = this.getIGN.bind(this);
+    //this.getMatchHistory = this.getMatchHistory.bind(this);
   }
 
   
   async componentDidMount(){
     //Enter Summoner Name;
     console.log(this.state.keys);
-
-    //const response = await fetch('https://ae6gzj3iye.execute-api.us-east-2.amazonaws.com/RiotStage').catch(()=>{return("Errror")});
-    
-    /*
-    const world = firebase.functions().httpsCallable('hello');
-    world().then(result =>{
-      console.log(result.data);
-      return("Finished without error");
-    }).catch(()=>{
-      console.log("catch");
-      return("Caught and error");
-    })*/
-    /*reply().then(()=>{
-      console.log("Local Promise: " )
-      console.log(reply.data);
-      return(console.log("Complete"));
-    }).catch(()=>{
-      return(console.log("Error Local"));
-    })*/
-    /*
-    fetch("")
-    .then(this.statusCheck)
-    .then(function(res){
-        console.log("Retrieval worked");
-        return res.json();
-      }).then(function(json){
-        console.log(json);
-        return json;
-      }).catch((err) =>{
-        console.log("Failed API retrieval")
-      });
-      */
-    /*
-    const world = firebase.functions().httpsCallable('hello');
-
-    world().then(result =>{
-      console.log("Promise Resolved");
-      console.log("===: " + result.data);
-    }).catch(result =>{
-      console.log("Promise Rejected");
-      console.log("Promise Rejected");
-    });
-    */
-    /*
-    const getNumber = firebase.functions().httpsCallable('number');
-    getNumber().then(result =>{
-      let numb = result.data;
-      console.log("Displaying: " + numb);
-    }).catch(function () {
-      console.log("Promise Rejected");
-  });*/
     
   }
-
+  
   getIGN(arg){
-    let ending = "?key1=".concat(arg);
+    console.log("Getting IGN");
+    //Check Lambda function to see what key1 retrieves
+    let ending = "?key1=1&key2=".concat(arg);
     console.log(ending);
-    fetch("aws"+ending).then(response=>response.json()).then(json=>{
-      console.log(json.body);
-    }).catch(()=>{
-      console.log("Error Occured");
+    fetch("amazon api gateway"+ending).then(response=>response.json()).then(json=>{
+      let body = json.body;
+      let obj = JSON.parse(body);
+      console.log("Seeing JSON RESULTS: \n" + obj.accountId);
+      //Get the name to
+      this.setState({
+        accID: obj.accountId,
+        startscreen: 2
+      });
+      
+    }).catch((err)=>{
+      console.log("Error Occured: " + err);
     })
   }
 
   render(){
-    let displayScreen = <div>
-                          <Header passUp={this.getIGN}/>
-                          <Swipe />
-                        </div>;
+    let displayScreen; 
     const checkScreen = this.state.startscreen;
     if(checkScreen === 1){
-
-    }else if(checkScreen === 2){
-      displayScreen = <div>
-                        <MatchHistory />
-                        <Profile />
-                      </div>
-    }
-    
-    return (
-                        <div className="App">
-                          {displayScreen}
+      displayScreen =   <div>
+                          <Header passUp={this.getIGN}/>
+                          <Swipe />
                           <h2>League</h2>
                           <h2>Valorant</h2>
                           <h2>Rainbow Six</h2>
+                        </div>;
+    }else if(checkScreen === 2){
+      displayScreen = <div className="flexInit">
+                        <MatchHistory account={this.state.accID}/>
+                        <Profile />
+                      </div>
+    }
+    console.log("AccouintID: " + this.state.accID);
+    
+    console.log("Match History: ");
+    /*if(check !== "temp"){
+      this.getMatchHistory();
+
+    }*/
+    return (
+                        <div className="App">
+                          {displayScreen}
                         </div>
     );
   }

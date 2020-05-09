@@ -1,4 +1,5 @@
 import React from "react";
+import "./Cards.css"
 
 class Cards extends React.Component{
     constructor(props){
@@ -14,8 +15,8 @@ class Cards extends React.Component{
 
     render(){
         return(
-            <div>
-                <div className="WinLoss">{this.state.wl}</div>
+            <div className="Cards">
+                <div className="winLoss">{this.state.wl}</div>
                 <div className="champion">{this.state.champ}</div>
                 <div className="kills">{this.state.kills}</div>
                 <div className="deaths">{this.state.kills}</div>
