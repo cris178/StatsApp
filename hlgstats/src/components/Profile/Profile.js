@@ -10,11 +10,11 @@ class MatchHistory extends React.Component{
         }
     }
 
-
     render(){
         return(
             <div className="Profile">
-               <h1>Name</h1>
+               <h1>{this.props.name}</h1>
+               <h2>lvl{this.props.level}</h2>
             </div>
         );
     }

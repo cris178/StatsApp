@@ -6,15 +6,34 @@
         box-shadow: 0 2px 8px 0 rgba(0,0,0,.32);
         margin-top: 20px;
         width: 95%;
-        height: 100px;
+        height: 90px;
         background-color: #29384a;
         border-radius: 5px;
     }
     .champion{
-        position: absolute;
+        position: relative;
+        top:14%;
+        right:-70%;
+        font-size: 1rem;
     }
-    .winloss{
-        position: absolute;
+    .role{
+        position: relative;
+        top:12%;
+        right:-70%;
+        font-size: .7rem;
+    }
+    .winLoss{
+        text-transform: uppercase;
+        position: relative;
+        top:35%;
+        left:5%;
+        font-size: 1rem;
+    }
+    .score{
+        position: relative;
+        font-size: .7rem;
+        top:-2%;
+        left:8%;
     }
     
 }
