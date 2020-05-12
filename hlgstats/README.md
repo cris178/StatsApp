@@ -1,6 +1,6 @@
 # HLG Stats
 
-Currently available for mobile devices at [HLGSTATS](stats.highlandergaming.org)
+Currently available for mobile devices at [HLGSTATS](https://stats.highlandergaming.org)
 
 This web application show cases the esports team's statistics. The application showcases an individual player's stats or a team's stats. Using React and SwipeJS, the site was made for mobile first.  
 
