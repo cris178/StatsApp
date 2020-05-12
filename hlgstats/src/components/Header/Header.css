@@ -4,8 +4,8 @@
         padding: 0;
         border: 0;
         width: 100vw;
-        height: 8vh;
-        display: block;
+        height: 4rem;
+       padding-bottom: 10px;
         
         
     }
@@ -30,6 +30,7 @@
         position: absolute;
         
     }
+    /*This is for the search icon before the search bar appears*/
     .searchIcon{
         position: absolute;
         right:1.5em;

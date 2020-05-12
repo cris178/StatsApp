@@ -19,7 +19,7 @@ class MatchHistory extends React.Component{
         
         console.log("Getting Match History");
         let ending = "?key1=2&key2=".concat(this.props.account);
-        const res = await fetch("aws api"+ending).catch((err)=>{
+        const res = await fetch("aws"+ending).catch((err)=>{
             console.log(err);
         })
         const json = await res.json();
@@ -43,7 +43,7 @@ class MatchHistory extends React.Component{
         return(
             <div className ="MatchHistory">
             {this.state.matchHistory.map((match,index)=>{
-                return (<Cards key={index} char={match.champion} role={match.role} list={this.props.champList}/>)
+                return (<Cards key={index} char={match.champion} role={match.role} list={this.props.champList} matchID={match.gameId}/>)
             })}
             </div>
         );

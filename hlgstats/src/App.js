@@ -41,7 +41,7 @@ class App extends React.Component{
     
     //Test to see which version works, public API's by Riot to get champion data
     do{
-      const version = (await fetch("http://ddragon.leagueoflegends.com/api/versions.json").then((res)=>res.json()))[versionIndex++];
+      const version = (await fetch("https://ddragon.leagueoflegends.com/api/versions.json").then((res)=>res.json()))[versionIndex++];
       response = await fetch(`https://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/champion.json`);
     }while(!response.ok)
     championJson = await response.json();
@@ -71,7 +71,7 @@ class App extends React.Component{
     //Check Lambda function to see what key1 retrieves
     let ending = "?key1=1&key2=".concat(arg);
     console.log(ending);
-    fetch("aws api"+ending).then(response=>response.json()).then(json=>{
+    fetch("aws"+ending).then(response=>response.json()).then(json=>{
       let body = json.body;
       let obj = JSON.parse(body);
       console.log("Seeing JSON RESULTS: \n" + obj.accountId);
@@ -92,7 +92,7 @@ class App extends React.Component{
     let displayScreen; 
     const checkScreen = this.state.startscreen;
     if(checkScreen === 1){
-      displayScreen =   <div>
+      displayScreen =   <div className="block">
                           <Header passUp={this.getIGN}/>
                           <Swipe />
                           <h2>League</h2>

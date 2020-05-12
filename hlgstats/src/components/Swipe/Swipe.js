@@ -98,7 +98,7 @@ const Swipe = ()=>{
 
           <div className="slide">
             <div className="swiperImage" data-swiper-parallax={parallaxAmount}>
-              <img src={image1} className="responsive" width="100%" />
+              <img src={image1} alt="Esports" className="responsive" width="100%" />
             </div>
             <div className="title" data-swiper-parallax="-100">
               League of Legends A Team

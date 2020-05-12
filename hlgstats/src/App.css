@@ -9,12 +9,24 @@ body{
   color: #698EBF;
   margin-left: -.35em;
 }
+
 @media screen and (max-width: 40.5em) {
+  .block{
+    display: block;
+    position: relative;
+    height: 800px;
+    
+  }
   .flexInit{
     display: flex;
     flex-flow: row wrap;
     overflow-x: hidden;
+    overflow-y: hidden;
   }
+}
+
+:root{
+  --swiper-theme-color: red;
 }
 
 
