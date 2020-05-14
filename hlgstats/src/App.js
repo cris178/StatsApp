@@ -6,6 +6,7 @@ import './App.css';
 import firebase from "./firebase";
 import MatchHistory from "./components/MatchHistory/MatchHistory";
 import Profile from "./components/Profile/Profile"; 
+import Overview from "./components/Overview/Overview";
 
 class App extends React.Component{
   
@@ -19,10 +20,14 @@ class App extends React.Component{
       name: "default",
       accID:"temp",
       level:"0",
-      matchHistory:[],
-      champs:[]
+      champs:[],
+      kills: 0,
+      deaths: 0,
+      assists: 0,
+      wins: 0
     }
     this.getIGN = this.getIGN.bind(this);
+    this.getAverage = this.getAverage.bind(this);
     //this.getMatchHistory = this.getMatchHistory.bind(this);
   }
 
@@ -71,7 +76,7 @@ class App extends React.Component{
     //Check Lambda function to see what key1 retrieves
     let ending = "?key1=1&key2=".concat(arg);
     console.log(ending);
-    fetch("aws"+ending).then(response=>response.json()).then(json=>{
+    fetch(" "+ending).then(response=>response.json()).then(json=>{
       let body = json.body;
       let obj = JSON.parse(body);
       console.log("Seeing JSON RESULTS: \n" + obj.accountId);
@@ -80,12 +85,27 @@ class App extends React.Component{
         name: obj.name,
         accID: obj.accountId,
         level: obj.summonerLevel,
-        startscreen: 2
+        startscreen: 2,
+        kills: 0,
+        deaths: 0,
+        assists: 0,
+        wins: 0
       });
       
     }).catch((err)=>{
       console.log("Error Occured: " + err);
     })
+  }
+
+  getAverage(arg){
+    console.log("Getting Average");
+    this.setState({
+      kills: arg.kills,
+      deaths: arg.deaths,
+      assists: arg.assists,
+      wins: arg.wins
+    });
+
   }
 
   render(){
@@ -98,14 +118,34 @@ class App extends React.Component{
                           <h2>League</h2>
                           <h2>Valorant</h2>
                           <h2>Rainbow Six</h2>
+                         
+                          <section className="circle-chart-container">
+                          <svg className="circle-chart" viewbox="0 0 33.83098862 33.83098862" xmlns="http://www.w3.org/2000/svg">
+                              <circle stroke="#efefef" stroke-width=".5" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+                              <circle className="circle-chart-circle" stroke="#64b2d1" stroke-width="3" stroke-dasharray="54,100" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+                            </svg>
+                          <span className="circle-chart-percentage circle-chart-one-percentage">
+                              29.1%
+                            </span>
+                          <svg className="circle-chart circle-chart-two" viewbox="0 0 33.83098862 33.83098862" xmlns="http://www.w3.org/2000/svg">
+                              <circle stroke="#efefef" stroke-width="0" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+                              <circle className="circle-chart-circle" stroke="#5292ac" stroke-width="3" stroke-dasharray="29,100" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+                            </svg>
+                          <span className="circle-chart-percentage circle-chart-two-percentage">
+                              54.9%
+                            </span>
+                        </section>
+
+
                         </div>;
     }else if(checkScreen === 2){
       displayScreen = <div className="flexInit">
-                        <MatchHistory account={this.state.accID} champList={this.state.champs}/>
+                        <MatchHistory passUp={this.getAverage} account={this.state.accID} champList={this.state.champs}/>
                         <Profile name={this.state.name} level={this.state.level} />
+                        <Overview kills={this.state.kills} deaths={this.state.deaths} assists={this.state.assists} wins={this.state.wins}/>
                       </div>
     }
-    console.log("AccouintID: " + this.state.accID);
+    //console.log("AccountID: " + this.state.accID);
     
     return (
                         <div className="App">
