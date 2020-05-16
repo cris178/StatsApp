@@ -1,6 +1,53 @@
-.Overview{
-    width: 100vw;
-    height: 300px;
-    order:2;
-    border-bottom: black;
+
+@media screen and (max-width: 40.5em) {
+    .Overview{
+        width: 100vw;
+        height: 200px;
+        order:2;
+        border-bottom: black;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        justify-content: center;
+    }
+
+    .Over-Sub{
+        font-size: large;
+        text-align: center;
+        height:5rem;
+    }
+    .Over-Sub > p{
+        font-weight: 600;
+    }
+    .Win{
+        order: 1;
+        flex-shrink: 1;
+        flex-basis: 25%;
+    }
+    .WinPercent{
+        order: 1;
+        flex-basis: 25%;
+    }
+    .KDA{
+        order: 1;
+        flex-basis: 25%;
+    }
+    .KDR{
+        order: 1;
+        flex-basis: 25%;
+    }
+    .Kills{
+        order: 2;
+        flex-basis: 33.3%;
+    }
+    .Deaths{
+        order: 2;
+        flex-basis: 33.3%;
+    }
+    .Assists{
+        order: 2;
+        flex-basis: 33.3%;
+    }
+
 }

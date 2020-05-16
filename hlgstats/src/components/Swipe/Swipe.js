@@ -4,6 +4,7 @@ import Swiper from 'react-id-swiper';
 //import 'react-id-swiper/lib/styles/css/swiper.css'
 import 'swiper/css/swiper.css';
 import image1 from './Images/HLG_League_Banner.png';
+import LogoBack from "./LogoDark.png";
 
 const Swipe = ()=>{
     const params = {
@@ -40,7 +41,7 @@ const Swipe = ()=>{
               <img src={image1} className="responsive" width="100%" alt="HLG Esports League of Legends"/>
             </div>
             <div className="title" data-swiper-parallax="-100">
-              League of Legends A Team
+              <img src={LogoBack} width="70px" height="70px" alt="Logo HLG"></img>
             </div>
             <div className="subtitle" data-swiper-parallax="-200">Subtitle</div>
             <div className="text" data-swiper-parallax="-300" data-swiper-parallax-duration="600">

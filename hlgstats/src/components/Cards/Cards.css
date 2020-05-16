@@ -10,6 +10,11 @@
         background-color: #29384a;
         border-radius: 5px;
     }
+    .Cards > img{
+        position: absolute;
+        margin-top: .6rem;
+        right: 1rem;
+    }
     .champion{
         position: relative;
         top:14%;

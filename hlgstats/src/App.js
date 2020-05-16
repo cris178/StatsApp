@@ -76,7 +76,7 @@ class App extends React.Component{
     //Check Lambda function to see what key1 retrieves
     let ending = "?key1=1&key2=".concat(arg);
     console.log(ending);
-    fetch(" "+ending).then(response=>response.json()).then(json=>{
+    fetch(""+ending).then(response=>response.json()).then(json=>{
       let body = json.body;
       let obj = JSON.parse(body);
       console.log("Seeing JSON RESULTS: \n" + obj.accountId);
@@ -119,22 +119,7 @@ class App extends React.Component{
                           <h2>Valorant</h2>
                           <h2>Rainbow Six</h2>
                          
-                          <section className="circle-chart-container">
-                          <svg className="circle-chart" viewbox="0 0 33.83098862 33.83098862" xmlns="http://www.w3.org/2000/svg">
-                              <circle stroke="#efefef" stroke-width=".5" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
-                              <circle className="circle-chart-circle" stroke="#64b2d1" stroke-width="3" stroke-dasharray="54,100" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
-                            </svg>
-                          <span className="circle-chart-percentage circle-chart-one-percentage">
-                              29.1%
-                            </span>
-                          <svg className="circle-chart circle-chart-two" viewbox="0 0 33.83098862 33.83098862" xmlns="http://www.w3.org/2000/svg">
-                              <circle stroke="#efefef" stroke-width="0" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
-                              <circle className="circle-chart-circle" stroke="#5292ac" stroke-width="3" stroke-dasharray="29,100" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
-                            </svg>
-                          <span className="circle-chart-percentage circle-chart-two-percentage">
-                              54.9%
-                            </span>
-                        </section>
+                      
 
 
                         </div>;

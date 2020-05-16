@@ -1,5 +1,6 @@
 import React from "react";
 import "./Cards.css"
+import LogoBack from "./LogoDark.png";
 
 class Cards extends React.Component{
     constructor(props){
@@ -52,12 +53,12 @@ class Cards extends React.Component{
         let death = await stats.deaths;
         let assist = await stats.assists;
         
-        let wins = 0;
+        let winners = 0;
         if(win === "Fail"){
             win = "Defeat";
         }else{
             win = "Victory"
-            wins++;
+            winners++;
         }
 
         let cname = await this.props.list[this.props.char].name;
@@ -70,7 +71,7 @@ class Cards extends React.Component{
            
         });
 
-        let matchData = {kills: kill, deaths: death, assists:assist, wins: wins};
+        let matchData = {kills: kill, deaths: death, assists:assist, wins: winners};
         console.log("Passing Up in Cards: " + matchData.deaths);
         this.props.passUp(matchData);
     }
@@ -86,6 +87,7 @@ class Cards extends React.Component{
         
         return(
             <div className="Cards">
+                <img src={LogoBack} width="70px" height="70px" alt="Logo HLG"></img>
                 <div className="winLoss">{this.state.wl}</div>
                 <div className="champion">{this.state.champ}</div>
                 <div className="role">{role}</div>
