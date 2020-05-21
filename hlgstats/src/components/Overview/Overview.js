@@ -48,34 +48,34 @@ class Overview extends React.Component{
         
         return(
             <div className="Overview">
-            
+                <h2>Overview</h2>
                 <div className="Win Over-Sub">
                     <p>Wins </p>
-                    {this.props.wins}
+                    <p>{this.props.wins}</p>
                 </div>
                 <div className="WinPercent Over-Sub">
                     <p>Win %</p>
-                    {this.state.winsPercent.toFixed(2)}%
+                    <p>{this.state.winsPercent.toFixed(2)}%</p>
                 </div>
                 <div className="KDA Over-Sub">
                     <p>KDA</p>
-                    {this.state.kda.toFixed(2)}%
+                    <p>{this.state.kda.toFixed(2)}%</p>
                 </div>
                 <div className="KDR Over-Sub">
                     <p>KDR</p>
-                    {this.state.kdr.toFixed(2)}%
+                    <p>{this.state.kdr.toFixed(2)}%</p>
                 </div>
                 <div className="Kills Over-Sub">
                     <p>Kills</p>
-                    {this.props.kills}
+                    <p>{this.props.kills}</p>
                 </div>
                 <div className="Deaths Over-Sub">
                     <p>Deaths</p>
-                    {this.props.deaths}
+                    <p>{this.props.deaths}</p>
                 </div>
                 <div className="Assists Over-Sub">
                     <p>Assissts</p>
-                    {this.props.assists}
+                    <p>{this.props.assists}</p>
                 </div>
             </div>
         );

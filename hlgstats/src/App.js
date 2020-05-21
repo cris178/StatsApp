@@ -24,7 +24,10 @@ class App extends React.Component{
       kills: 0,
       deaths: 0,
       assists: 0,
-      wins: 0
+      wins: 0,
+      members:[
+        
+      ]
     }
     this.getIGN = this.getIGN.bind(this);
     this.getAverage = this.getAverage.bind(this);
