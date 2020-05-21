@@ -1,14 +1,15 @@
 
 @media screen and (max-width: 40.5em) {
     .Overview{
+        color: #67666f;
         width: 100vw;
         order:2;
-        border-bottom: black;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         align-content: flex-start;
         justify-content: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     .Overview > h2{
         order: 1;
@@ -16,69 +17,75 @@
         margin-left: 10px;
         margin-right: 10px;
         flex-basis: 100%;
-        background-color: #1C2633;
+        font-weight: 100;
+        font-size: 2.5rem;
         border-bottom:solid;
         border-bottom-color: grey;
         border-width: .5px;
-        text-transform: uppercase;
+        
     }
 
     .Over-Sub{
+        text-align: center;
         font-size: large;
         height:5rem;
     }
+
+    .Over-Sub > p:first-child{
+        color: #f0a475;
+        margin-top: 1.5rem;
+    }
+
     .Over-Sub > p{
         padding: 0px;
         margin: 0px;
+        color: white;
         margin-left: 10px;
         font-weight: 600;
     }
 
-    .Over-Sub > p:first-child{
-        margin-top: 1.5rem;
-    }
 
     .Win{
         order: 1;
         flex-shrink: 1;
         flex-basis: 50%;
-        background-color: #1C2633;
+        
         
     }
     .WinPercent{
         order: 1;
         flex-basis: 50%;
-        background-color: #1C2633;
+        
         
     }
     .KDA{
         order: 2;
         flex-basis: 50%;
-        background-color: #1C2633;
+        
         
     }
     .KDR{
         order: 2;
         flex-basis: 50%;
-        background-color: #1C2633;
+        
         z-index: 0;
     }
     .Kills{
         order: 3;
         flex-basis: 33.3%;
-        background-color: #1C2633;
+        
         
     }
     .Deaths{
         order: 3;
         flex-basis: 33.3%;
-        background-color: #1C2633;
+        
   
     }
     .Assists{
         order: 3;
         flex-basis: 33.3%;
-        background-color: #1C2633;
+        
        
     }
 

@@ -20,25 +20,32 @@
        margin-right: auto;
         
     }
+    .player{
+        z-index: 1;
+        position: absolute;
+        left:40%;
+        bottom: 0px;
+    }
     .title{
         z-index: 1;
         font-size: 1.5em;
         position: absolute;
-        top:100px;
-        right:10px;
+        left: 25%;
+        bottom: 1.5rem;
     }
     .subtitle{
         z-index: 1;
         font-size: 1em;
         position: absolute;
-        top:130px;
-        right:10px;
+        right: 1rem;
+        bottom: .5rem;
     }
     .text{
         z-index: 1;
         font-size: 1em;
         position: absolute; 
-        top:10px;
+        left: 1rem;
+        bottom:.5rem;
     }
     .phraseOne{
         z-index: 1;
