@@ -13,8 +13,9 @@
     }
     .Cards > img{
         position: absolute;
-        margin-top: .6rem;
-        right: 8rem;
+        margin-top: 1.5rem;
+        right: 9rem;
+        border-radius: 50%;
     }
     .champion{
         position: relative;

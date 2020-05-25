@@ -66,7 +66,7 @@ class MatchHistory extends React.Component {
             assists: this.state.assists,
             wins: this.state.wins
         }
-        console.log("MatchHistory Passing Up: " + score.deaths);
+        //console.log("MatchHistory Passing Up: " + score.deaths);
         this.props.passUp(score);
 
     }

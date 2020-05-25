@@ -10,6 +10,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 The project works with the Riot API. Known for one of the most popular video games on the planet, Riot offers access to the data behind League of Legends. In order to use the API several major hurdles need to be solved. The API can't be used on the front end because of CORS issues. I solve the issue by using AWS Lambda functions and AWS API Gateway Management.
 
+Along with an official API, two open API's were also used. Ddragon and Cdragon. Ddragon is usefule for getting champion information such as their key, id, and background information. Cdragon is a community driven API that gives access to game assets. While useful, because of its community built resources it may not be as reliable as an offical API by Riot
+
+Champion Info:
+
+http://ddragon.leagueoflegends.com/cdn/9.3.1/data/en_US/champion.json
+
+Champion Portraits:
+
+https://cdn.communitydragon.org/latest/champion/ahri/square
+
 
 # Hurdles
 

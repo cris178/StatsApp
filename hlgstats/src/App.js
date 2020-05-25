@@ -92,7 +92,7 @@ class App extends React.Component {
     //Check Lambda function to see what key1 retrieves
     let ending = "?key1=1&key2=".concat(arg);
     console.log(ending);
-    fetch("" + ending).then(response => response.json()).then(json => {
+    fetch("https://w8bzyasuzf.execute-api.us-east-2.amazonaws.com/Riot" + ending).then(response => response.json()).then(json => {
       let body = json.body;
       let obj = JSON.parse(body);
       console.log("Seeing JSON RESULTS: \n" + obj.accountId);

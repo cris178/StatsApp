@@ -7,12 +7,13 @@ class Cards extends React.Component {
         super(props);
         this.state = {
             wl: "Loss",
-            champ: "",
+            champ: "ahri",
             kills: 0,
             deaths: 0,
             assissts: 0,
-            latestChampList: []
+           
         }
+        
     }
 
     async componentDidMount() {
@@ -62,18 +63,27 @@ class Cards extends React.Component {
         }
 
         let cname = await this.props.list[this.props.char].name;
+
         this.setState({
             champ: cname,
             wl: win,
             kills: kill,
             deaths: death,
-            assissts: assist
-
+            assissts: assist,
+            
         });
 
         let matchData = { kills: kill, deaths: death, assists: assist, wins: winners };
-        console.log("Passing Up in Cards: " + matchData.deaths);
+        //console.log("Passing Up in Cards: " + matchData.deaths);
         this.props.passUp(matchData);
+    }
+
+    async componentDidUpdate(prevProps, prevState){
+        if (prevState.champ !== this.state.champ) {
+            this.setState({
+                nameSet: 1
+            });
+        }
     }
 
 
@@ -84,10 +94,14 @@ class Cards extends React.Component {
             role = "JUNGLE";
         }
 
-
+       
+        //Remove punctuation from champ name like kai'sa
+        let naming = this.state.champ.replace(/[.,\/#!$%\^&\*;:{}=\-_`'~()]/g,"");
+       
+        
         return (
             <div className="Cards">
-                <img src={"http://raw.communitydragon.org/10.1/game/assets/characters/" + this.state.champ + "/hud/" + this.state.champ + "_circle.png"} width="70px" height="70px" alt={this.state.champ + "UCR HLG Esports"}></img>
+                <img src={"https://cdn.communitydragon.org/latest/champion/"+naming+"/square"} height="50px" width="50px"></img>
                 <div className="winLoss">{this.state.wl}</div>
                 <div className="champion">{this.state.champ}</div>
                 <div className="role">{role}</div>
