@@ -22,8 +22,11 @@ class MatchHistory extends React.Component {
     async componentDidMount() {
         /***Retrieve the last 10 matches*****/
 
+        let naming = this.props.account;
+        naming = naming.replace(/\s/g, '');
+
         console.log("Getting Match History");
-        let ending = "?key1=2&key2=".concat(this.props.account);
+        let ending = "?key1=2&key2=".concat(naming);
         const res = await fetch("" + ending).catch((err) => {
             console.log(err);
         })
@@ -32,6 +35,7 @@ class MatchHistory extends React.Component {
         let obj = await JSON.parse(body);
         const matches = obj.matches;
         console.log("In GetHistory: " + matches);
+        console.log(obj);
 
         this.setState({
             kills: 0,

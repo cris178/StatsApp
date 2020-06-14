@@ -1,6 +1,7 @@
 @media screen and (max-width: 40.5em) {
     .Cards{
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: block;
         margin-left: auto;
         margin-right: auto;
         margin-top: 20px;
@@ -12,34 +13,36 @@
         /*background-color: #232530;*/
     }
     .Cards > img{
-        position: absolute;
-        margin-top: 1.5rem;
-        right: 9rem;
+        position: relative;
+        bottom: -30px;
+        margin-left: 40%;
         border-radius: 50%;
+        height: 40px;
+        width: 40px;
     }
     .champion{
         position: relative;
-        top:14%;
+        top:-40%;
         right:-70%;
         font-size: 1rem;
     }
     .role{
         position: relative;
-        top:12%;
+        top: -40%;
         right:-70%;
         font-size: .7rem;
     }
     .winLoss{
         text-transform: uppercase;
         position: relative;
-        top:35%;
+        top:-13%;
         left:5%;
         font-size: 1rem;
     }
     .score{
         position: relative;
         font-size: .7rem;
-        top:-2%;
+        top:-60%;
         left:6%;
     }
     

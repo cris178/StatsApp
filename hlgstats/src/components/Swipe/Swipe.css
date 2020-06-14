@@ -13,6 +13,9 @@
     img{
         border-radius: 5px;
     }
+    .swiperImage > img{
+        width: 100%;
+    }
     
     .swiperImage{
        width: 95%;

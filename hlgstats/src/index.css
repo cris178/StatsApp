@@ -3,6 +3,8 @@ html,body{
   padding: 0px;
   border: 0px;
   height: 100%; /*Fix for keyboard moving content*/
+  overflow-x: hidden;
+  width: 100%;
 }
 ul{
   margin: 0px;

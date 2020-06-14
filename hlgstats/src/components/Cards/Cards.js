@@ -11,9 +11,9 @@ class Cards extends React.Component {
             kills: 0,
             deaths: 0,
             assissts: 0,
-           
+
         }
-        
+
     }
 
     async componentDidMount() {
@@ -70,7 +70,7 @@ class Cards extends React.Component {
             kills: kill,
             deaths: death,
             assissts: assist,
-            
+
         });
 
         let matchData = { kills: kill, deaths: death, assists: assist, wins: winners };
@@ -78,7 +78,7 @@ class Cards extends React.Component {
         this.props.passUp(matchData);
     }
 
-    async componentDidUpdate(prevProps, prevState){
+    async componentDidUpdate(prevProps, prevState) {
         if (prevState.champ !== this.state.champ) {
             this.setState({
                 nameSet: 1
@@ -94,14 +94,19 @@ class Cards extends React.Component {
             role = "JUNGLE";
         }
 
-       
-        //Remove punctuation from champ name like kai'sa
-        let naming = this.state.champ.replace(/[.,\/#!$%\^&\*;:{}=\-_`'~()]/g,"");
-       
-        
+
+        //Remove punctuation from champ name like kai'sa and characters with spaced nammes jaravan iv
+        console.log(this.state.champ);
+        let naming = this.state.champ.replace(/[.,\/#!$%\^&\*;:{}=\-_`'~()]/g, "");
+
+        //Remove spaces
+        naming = naming.replace(/\s/g, '');
+
+
+
         return (
             <div className="Cards">
-                <img src={"https://cdn.communitydragon.org/latest/champion/"+naming+"/square"} height="50px" width="50px"></img>
+                <img src={"https://cdn.communitydragon.org/latest/champion/" + naming + "/square"}></img>
                 <div className="winLoss">{this.state.wl}</div>
                 <div className="champion">{this.state.champ}</div>
                 <div className="role">{role}</div>

@@ -1,4 +1,11 @@
-@media screen and (max-width: 40.5em) {
+@media  screen and (max-width: 40.5em) {
+    .backButton{
+        position: absolute;
+        margin: 0px;
+        padding: 0px;
+        font-size: 130px;
+        top:-.3em;
+    }
     .Profile{
         width: 100vw;
         height: 400px;

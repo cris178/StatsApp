@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header/Header';
 import Swipe from './components/Swipe/Swipe';
+import PlayerCards from './components/PlayerCards/PlayerCards';
 import logo from './logo.svg';
 import './App.css';
 import firebase from "./firebase";
@@ -9,6 +10,16 @@ import Profile from "./components/Profile/Profile";
 import Overview from "./components/Overview/Overview";
 import { fireEvent } from '@testing-library/react';
 import player1 from "./Images/Ezekiel_Kang_AD_Carry.png";
+import portrait1 from "./Images/EzekielKang.png";
+import banner1 from "./Images/BannerEzek.png";
+import player2 from "./Images/Jake-Han-Portrait.png";
+import portrait2 from "./Images/JakeHan.png";
+import player3 from "./Images/Kevin-Kim-Portrait.png";
+import portrait3 from "./Images/KevinKim.png";
+import player4 from "./Images/Peter-Nguyen-Portrait.png";
+import portrait4 from "./Images/PeterNguyen.png";
+import player5 from "./Images/Ryan-Mealio-Portrait.png";
+import portrait5 from "./Images/RyanMealio.png";
 
 class App extends React.Component {
 
@@ -18,32 +29,84 @@ class App extends React.Component {
     super(props);
     this.state = {
       startscreen: 1,
+      //The values here will be passed to the profile on click of a slider or card
       stats: 0,
+      player: [],
       name: "default",
+      ign: "default",
+      role: "default",
       accID: "temp",
       level: "0",
-      champs: [],
+      //These are passed to the overview
       kills: 0,
       deaths: 0,
       assists: 0,
       wins: 0,
       members: ([
         {
-          LeagueA:
-          {
-            name: "Ezekiel Kang",
-            ign: "ezepoon",
-            team: "League of Legends",
-            position: "AD Carry",
-            image: player1
-          }
+          LeagueA: [
+            {
+              name: "Ezekiel Kang",
+              ign: "ezepoon",
+              team: "League of Legends",
+              position: "AD Carry",
+              image: player1,
+              portrait: portrait1,
+              backgroundImage: banner1
+            },
+            {
+              name: "Calvin Nguyen",
+              ign: "sketch",
+              team: "League of Legends",
+              position: "Jungle",
+              image: player2,
+              portrait: portrait2,
+              backgroundImage: banner1
+            },
+            {
+              name: "Joonho Jake Han",
+              ign: "LDCs",
+              team: "League of Legends",
+              position: "Mid",
+              image: player3,
+              portrait: portrait3,
+              backgroundImage: banner1
+            },
+            {//IGN Not Working in OP.GG
+              name: "Peter Nguyen",
+              ign: "T1 HOT RUFFLES",
+              team: "League of Legends",
+              position: "Support",
+              image: player4,
+              portrait: portrait4,
+              backgroundImage: banner1
+            },
+            {
+              name: "Ryan Vincent Mealio",
+              ign: "Themealio1",
+              team: "League of Legends",
+              position: "Top",
+              image: player5,
+              portrait: portrait5,
+              backgroundImage: banner1
+            }
+          ],
+          Valorant: [
+            {
+              name: "Brain",
 
+            },
+            {
+
+            }
+          ]
 
         }
       ])
     }
     this.getIGN = this.getIGN.bind(this);
     this.getAverage = this.getAverage.bind(this);
+    this.setView = this.setView.bind(this);
     //this.getMatchHistory = this.getMatchHistory.bind(this);
   }
 
@@ -86,11 +149,14 @@ class App extends React.Component {
   }
 
 
-
+  /*This sets the player that is selected. The selected player's pointer is passed in as arg*/
   getIGN(arg) {
     console.log("Getting IGN");
+    //Remove spaces in GamerTag
+    let ign = arg.ign;
+    ign = ign.replace(/\s/g, '');
     //Check Lambda function to see what key1 retrieves
-    let ending = "?key1=1&key2=".concat(arg);
+    let ending = "?key1=1&key2=".concat(ign);
     console.log(ending);
     fetch("" + ending).then(response => response.json()).then(json => {
       let body = json.body;
@@ -98,7 +164,10 @@ class App extends React.Component {
       console.log("Seeing JSON RESULTS: \n" + obj.accountId);
       //Get the name to
       this.setState({
-        name: obj.name,
+        player: arg,
+        name: arg.name,
+        ign: obj.name,
+        role: arg.position,
         accID: obj.accountId,
         level: obj.summonerLevel,
         startscreen: 2,
@@ -114,7 +183,8 @@ class App extends React.Component {
   }
 
   getAverage(arg) {
-    console.log("Getting Average");
+
+    //console.log("Getting Average");
     this.setState({
       kills: arg.kills,
       deaths: arg.deaths,
@@ -123,26 +193,60 @@ class App extends React.Component {
     });
 
   }
+
+
+  setView(arg) {
+    this.setState({
+      startscreen: arg
+    })
+  }
   //p1={this.state.members[0].LeagueA[0]} 
   render() {
+
+    //Get Players to be Displayed in Front Page Slides
+    let randomPlayer = [0, 1, 2, 3, 4];
+    for (let i = 0; i < randomPlayer.length; i++) {
+      //console.log(i);
+      //Const is important because it changes in javascript for some reason.
+      const rand = Math.floor((Math.random() * 5) + 0);
+      const hold = randomPlayer[i];
+      //console.log("Swapping " + rand + " and " + hold);
+      randomPlayer[i] = randomPlayer[rand];
+      randomPlayer[rand] = hold;
+      //console.log(randomPlayer);
+    }
+    console.log("Randomized:" + randomPlayer);
+    let slideP1 = this.state.members[0].LeagueA[randomPlayer[0]]; //Gets random player from 0-3
+    let slideP2 = this.state.members[0].LeagueA[randomPlayer[1]];
+    let slideP3 = this.state.members[0].LeagueA[randomPlayer[2]];
+    let slideP4 = this.state.members[0].LeagueA[randomPlayer[3]];
+    let slideP5 = this.state.members[0].LeagueA[randomPlayer[4]];
+
+
+
+
     let displayScreen;
     const checkScreen = this.state.startscreen;
+
     if (checkScreen === 1) {
       displayScreen = <div className="block">
         <Header passUp={this.getIGN} />
-        <Swipe passUp={this.getIGN} p1={this.state.members[0].LeagueA} />
-        <h2>League</h2>
+        <Swipe passUp={this.getIGN} p1={slideP1} p2={slideP2} p3={slideP3} p4={slideP4} p5={slideP5} />
+        <div className="League">
+          <h2>League</h2>
+          <div className="Players">
+            {this.state.members[0].LeagueA.map((keyVal, index) => {
+              return <PlayerCards key={index} name={keyVal.name} passUp={this.getIGN} player={keyVal} portrait={keyVal.portrait} role={keyVal.position} />
+            })}
+          </div>
+        </div>
         <h2>Valorant</h2>
         <h2>Rainbow Six</h2>
-
-
-
-
-      </div>;
+      </div>
     } else if (checkScreen === 2) {
       displayScreen = <div className="flexInit">
         <MatchHistory passUp={this.getAverage} account={this.state.accID} champList={this.state.champs} />
-        <Profile name={this.state.name} level={this.state.level} />
+        <Profile name={this.state.name} passUp={this.setView} level={this.state.level} player={this.state.player} />
         <Overview kills={this.state.kills} deaths={this.state.deaths} assists={this.state.assists} wins={this.state.wins} />
       </div>
     }

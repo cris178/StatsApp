@@ -1,14 +1,33 @@
 body{
-  background-color: #1c1e26;
+  background-color: #242423;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+  font-family: 'Segoe UI', Helvetica, sans-serif;
 }
 
-.blue{
-  color: #698EBF;
-  margin-left: -.35em;
+.block::before{
+  content: "Switch to Mobile, Desktop version coming soon";
+  margin-left: 30%;
 }
+.Header{
+  visibility: hidden;
+}
+.Swiper{
+  visibility: hidden;
+}
+.slide{
+  visibility: hidden;
+}
+h2{visibility: hidden;}
+
+.Players{
+  visibility: hidden;
+}
+
+
+
+/*stats blue= #698EBF*/
 
 @media screen and (max-width: 40.5em) {
   .block{
@@ -17,15 +36,63 @@ body{
     height: 800px;
     
   }
+  .block::before{
+    display: none;
+  }
+  .Players{
+    visibility: visible;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: row;
+  }
+  .League{
+    margin: 8px 0 8px 12px;
+  }
+
+  .Header{
+    visibility: visible;
+  }
+  .Swiper{
+    visibility: visible;
+  }
+  .slide{
+    visibility: visible;
+  }
+  h2{visibility: visible;}
+  
   .flexInit{
     display: flex;
     flex-flow: row wrap;
     overflow-x: hidden;
     overflow-y: hidden;
   }
+
+  
 }
 
 :root{
   --swiper-theme-color: red;
 }
 
+
+::-webkit-scrollbar:horizontal {
+  height: 5px;
+  width: 3px;
+}
+
+::-webkit-scrollbar-button:horizontal {
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease-in-out;
+  -webkit-border-radius: 3em;
+}
+
+::-webkit-scrollbar-track:horizontal {
+  background: rgba(0, 0, 0, 0);
+  -webkit-border-radius: 3em;
+}
