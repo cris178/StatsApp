@@ -1,24 +1,45 @@
 @media  screen and (max-width: 40.5em) {
     .backButton{
-        position: absolute;
+        z-index: 10;
+        position: fixed;
         margin: 0px;
         padding: 0px;
-        font-size: 130px;
+        font-size: 2em;
         top:-.3em;
     }
     .Profile{
-        width: 100vw;
-        height: 400px;
-        order:1;
-    }
-    .Profile > h1{
-       position: relative;
-       text-align: center;
-       bottom: -75%;
-    }
-    .Profile > h2{
         position: relative;
+        width: 100vw;
+        order:1;
+
+    }
+    .profileText{
+        width: 100vw;
+        text-transform: uppercase;
+        line-height: 1;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        position: absolute;
         text-align: center;
-        bottom: -70%;
-     }
+        bottom: 5em;
+    }
+    .profileTextTwo{
+        width: 100vw;
+        text-transform: uppercase;
+        line-height: 1;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        position: absolute;
+        text-align: center;
+        bottom: 4em;
+    }
+    .profileTextThree{
+        width: 100vw;
+        text-transform: uppercase;
+        line-height: 1;
+        font-weight: 600;
+        position: absolute;
+        text-align: center;
+        bottom: 3em;
+    }
 }

@@ -3,7 +3,7 @@ import "./Swipe.css";
 import Swiper from 'react-id-swiper';
 //import 'react-id-swiper/lib/styles/css/swiper.css'
 import 'swiper/css/swiper.css';
-import image1 from './Images/HLGBlackandGold.png';
+
 
 
 
@@ -42,7 +42,7 @@ const Swipe = (props) => {
     < Swiper className="Swiper" {...params} getSwiper={setParallaxSwiper} >
       <div className="slide" onClick={(() => { props.passUp(props.p1) })}>
         <div className="swiperImage" data-swiper-parallax={parallaxAmount}>
-          <img src={props.p1.backgroundImage} className="responsive column orange" alt="UCR Esports" />
+          <img src={props.p1.backgroundImage} className="responsive" alt="UCR Esports" />
         </div>
         <div className="player" data-swiper-parallax="-100">
           <img src={props.p1.image} width="50%" alt={props.p1.name}></img>
@@ -72,7 +72,7 @@ const Swipe = (props) => {
 
       <div className="slide" onClick={(() => { props.passUp(props.p3) })}>
         <div className="swiperImage" data-swiper-parallax={parallaxAmount}>
-          <img src={image1} className="responsive" alt="UCR Esports" />
+          <img src={props.p3.backgroundImage} className="responsive" alt="UCR Esports" />
         </div>
         <div className="player" data-swiper-parallax="-100">
           <img src={props.p3.image} width="50%" alt="Logo HLG"></img>
@@ -87,7 +87,7 @@ const Swipe = (props) => {
 
       <div className="slide" onClick={(() => { props.passUp(props.p4) })}>
         <div className="swiperImage" data-swiper-parallax={parallaxAmount}>
-          <img src={image1} className="responsive" alt="UCR Esports" />
+          <img src={props.p4.backgroundImage} className="responsive" alt="UCR Esports" />
         </div>
         <div className="player" data-swiper-parallax="-100">
           <img src={props.p4.image} width="50%" alt="Logo HLG"></img>
@@ -101,7 +101,7 @@ const Swipe = (props) => {
 
       <div className="slide" onClick={(() => { props.passUp(props.p5) })} >
         <div className="swiperImage" data-swiper-parallax={parallaxAmount}>
-          <img src={image1} className="responsive" alt="UCR Esports" />
+          <img src={props.p5.backgroundImage} className="responsive" alt="UCR Esports" />
         </div>
         <div className="player" data-swiper-parallax="-100">
           <img src={props.p5.image} width="50%" alt="Logo HLG"></img>

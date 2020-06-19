@@ -1,21 +1,21 @@
 import React from "react";
 import "./Overview.css";
 
-class Overview extends React.Component{
-    constructor(props){
+class Overview extends React.Component {
+    constructor(props) {
         super(props);
-        this.state={
-            winsPercent : 0,
+        this.state = {
+            winsPercent: 0,
             kdr: 0,
             kda: 0,
             loss: 0
         }
     }
-    async componentDidMount(){
-        
+    async componentDidMount() {
+
     }
 
-    async componentDidUpdate(prevProps, prevState){
+    async componentDidUpdate(prevProps, prevState) {
         if (prevProps.deaths !== this.props.deaths) {
 
             //console.log("Kills: " + this.props.kills);
@@ -28,14 +28,14 @@ class Overview extends React.Component{
             let l = (10 - this.props.wins);
             let d = this.props.deaths;
 
-            if(d > 0){
+            if (d > 0) {
                 winPercentage = (this.props.wins / 10);
                 killdr = (this.props.wins / d);
-                killda = ((this.props.kills+this.props.assists)/d);
+                killda = ((this.props.kills + this.props.assists) / d);
             }
 
             this.setState({
-                winsPercent : winPercentage,
+                winsPercent: winPercentage,
                 kdr: killdr,
                 kda: killda,
                 loss: l
@@ -43,12 +43,12 @@ class Overview extends React.Component{
         }
     }
 
-    render(){
+    render() {
 
-        
-        return(
+
+        return (
             <div className="Overview">
-                <h2>Overview</h2>
+                <h2>OVERVIEW</h2>
                 <div className="Win Over-Sub">
                     <p>Wins </p>
                     <p>{this.props.wins}</p>

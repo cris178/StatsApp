@@ -1,49 +1,70 @@
 @media screen and (max-width: 40.5em) {
-    .Cards{
+    .Cards:first-child{
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         display: block;
         margin-left: auto;
         margin-right: auto;
         margin-top: 20px;
         width: 95%;
-        height: 80px;
+        height: 4em;
         border-top: solid;
         border-color: #67666f;
         border-width: .5px;
         /*background-color: #232530;*/
     }
+    .Cards{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
+        height: 4em;
+        border-top: solid;
+        border-color: #67666f;
+        border-width: .5px;
+    }
     .Cards > img{
         position: relative;
-        bottom: -30px;
-        margin-left: 40%;
         border-radius: 50%;
+        top:1em;
         height: 40px;
         width: 40px;
     }
     .champion{
         position: relative;
-        top:-40%;
-        right:-70%;
-        font-size: 1rem;
+        right:-11em;
+        bottom: 2.5em;
+        text-transform: uppercase;
+        line-height: 1;
+        font-weight: 600;
+        letter-spacing: 0.1em;
     }
     .role{
         position: relative;
-        top: -40%;
-        right:-70%;
-        font-size: .7rem;
+        text-transform: uppercase;
+        bottom: 2.5em;
+        line-height: 1;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        right:-11em;
     }
     .winLoss{
-        text-transform: uppercase;
         position: relative;
-        top:-13%;
-        left:5%;
-        font-size: 1rem;
+        bottom: 1.5em;
+        left: 4em;
+        text-transform: uppercase;
+        line-height: 1;
+        font-weight: 600;
+        letter-spacing: 0.1em;
     }
     .score{
         position: relative;
-        font-size: .7rem;
-        top:-60%;
-        left:6%;
+        bottom: 3.5em;
+        left: 4em;
+        text-transform: uppercase;
+        line-height: 1;
+        font-weight: 600;
+        letter-spacing: 0.1em;
     }
     
 }

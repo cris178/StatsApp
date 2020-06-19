@@ -47,6 +47,13 @@ http://raw.communitydragon.org/10.1/game/assets/characters/
 
 Because this was the first site I built using a mobile first approach it was interesting to use media queries. An unforeseen issue was realizing phone keyboards reduce the viewport height meaning any styles made using percentages or the viewport can be affected. 
 
+# Known Issues
+Currently there is no catch for when the official league API is down, thus no indication to a user something is wrong. 
+
+The player Peter Nguyen's ign is not valid does selecting him causes the app to crash since the API doesn't know what to do.
+
+
+
 
 
 

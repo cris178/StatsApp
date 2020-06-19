@@ -9,17 +9,41 @@ import MatchHistory from "./components/MatchHistory/MatchHistory";
 import Profile from "./components/Profile/Profile";
 import Overview from "./components/Overview/Overview";
 import { fireEvent } from '@testing-library/react';
+
+/*
+Add Player Images Below
+Photo Shoot         
+Player Cut Out:    
+slide background:
+
+The images must be in the Images folder, copy their name in format as seen below.
+*/
 import player1 from "./Images/Ezekiel_Kang_AD_Carry.png";
 import portrait1 from "./Images/EzekielKang.png";
-import banner1 from "./Images/BannerEzek.png";
-import player2 from "./Images/Jake-Han-Portrait.png";
-import portrait2 from "./Images/JakeHan.png";
-import player3 from "./Images/Kevin-Kim-Portrait.png";
-import portrait3 from "./Images/KevinKim.png";
+import banner1 from "./Images/apha.png";
+
+import banner2 from "./Images/reksai.png";
+import player2 from "./Images/Calvin-Nguyen-Portrait.png"
+import portrait2 from "./Images/CalvinNguyen.png";
+
+import banner3 from "./Images/sylas.png";
+import player3 from "./Images/Jake-Han-Portrait.png";
+import portrait3 from "./Images/JakeHan.png";
+
+import banner4 from "./Images/sylas.png";
 import player4 from "./Images/Peter-Nguyen-Portrait.png";
 import portrait4 from "./Images/PeterNguyen.png";
+
+import banner5 from "./Images/Kled.png";
 import player5 from "./Images/Ryan-Mealio-Portrait.png";
 import portrait5 from "./Images/RyanMealio.png";
+
+/*
+Kevin Kim not on team?
+import player5 from "./Images/Kevin-Kim-Portrait.png";
+import portrait5 from "./Images/KevinKim.png";
+*/
+
 
 class App extends React.Component {
 
@@ -61,7 +85,7 @@ class App extends React.Component {
               position: "Jungle",
               image: player2,
               portrait: portrait2,
-              backgroundImage: banner1
+              backgroundImage: banner2
             },
             {
               name: "Joonho Jake Han",
@@ -70,7 +94,7 @@ class App extends React.Component {
               position: "Mid",
               image: player3,
               portrait: portrait3,
-              backgroundImage: banner1
+              backgroundImage: banner3
             },
             {//IGN Not Working in OP.GG
               name: "Peter Nguyen",
@@ -79,7 +103,7 @@ class App extends React.Component {
               position: "Support",
               image: player4,
               portrait: portrait4,
-              backgroundImage: banner1
+              backgroundImage: banner2
             },
             {
               name: "Ryan Vincent Mealio",
@@ -88,7 +112,7 @@ class App extends React.Component {
               position: "Top",
               image: player5,
               portrait: portrait5,
-              backgroundImage: banner1
+              backgroundImage: banner5
             }
           ],
           Valorant: [
@@ -216,18 +240,19 @@ class App extends React.Component {
       //console.log(randomPlayer);
     }
     console.log("Randomized:" + randomPlayer);
-    let slideP1 = this.state.members[0].LeagueA[randomPlayer[0]]; //Gets random player from 0-3
+
+    //Use RandomPlayer as a list of random numbers to select 5 players to put in main hero slide
+    let slideP1 = this.state.members[0].LeagueA[randomPlayer[0]];
     let slideP2 = this.state.members[0].LeagueA[randomPlayer[1]];
     let slideP3 = this.state.members[0].LeagueA[randomPlayer[2]];
     let slideP4 = this.state.members[0].LeagueA[randomPlayer[3]];
     let slideP5 = this.state.members[0].LeagueA[randomPlayer[4]];
 
 
-
-
     let displayScreen;
     const checkScreen = this.state.startscreen;
 
+    //Decide which screen to display. Either Home Screen or Player Profile Page
     if (checkScreen === 1) {
       displayScreen = <div className="block">
         <Header passUp={this.getIGN} />
