@@ -19,24 +19,24 @@ slide background:
 The images must be in the Images folder, copy their name in format as seen below.
 */
 import player1 from "./Images/Ezekiel_Kang_AD_Carry.png";
-import portrait1 from "./Images/EzekielKang.png";
+import portrait1 from "./Images/EzekielKang.jpg";
 import banner1 from "./Images/apha.png";
 
 import banner2 from "./Images/reksai.png";
 import player2 from "./Images/Calvin-Nguyen-Portrait.png"
-import portrait2 from "./Images/CalvinNguyen.png";
+import portrait2 from "./Images/CalvinNguyen.jpg";
 
 import banner3 from "./Images/sylas.png";
 import player3 from "./Images/Jake-Han-Portrait.png";
-import portrait3 from "./Images/JakeHan.png";
+import portrait3 from "./Images/JakeHan.jpg";
 
 import banner4 from "./Images/sylas.png";
 import player4 from "./Images/Peter-Nguyen-Portrait.png";
-import portrait4 from "./Images/PeterNguyen.png";
+import portrait4 from "./Images/PeterNguyen.jpg";
 
 import banner5 from "./Images/Kled.png";
 import player5 from "./Images/Ryan-Mealio-Portrait.png";
-import portrait5 from "./Images/RyanMealio.png";
+import portrait5 from "./Images/RyanMealio.jpg";
 
 /*
 Kevin Kim not on team?
@@ -203,6 +203,7 @@ class App extends React.Component {
 
     }).catch((err) => {
       console.log("Error Occured: " + err);
+      return;
     })
   }
 
