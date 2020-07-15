@@ -33,7 +33,7 @@ class MatchHistory extends React.Component {
                     setTimeout(() => {
                         this.props.passUp(1);
                     }, 1000);
-                })}>◸</div>
+                })}>✖︎</div>
                 <div className="profileText">{this.props.name}</div>
                 <div className="profileTextTwo">{this.props.player.position}</div>
                 <div className="profileTextThree">lvl {this.props.level}</div>

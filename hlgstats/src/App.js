@@ -98,7 +98,7 @@ class App extends React.Component {
             },
             {//IGN Not Working in OP.GG
               name: "Peter Nguyen",
-              ign: "T1 HOT RUFFLES",
+              ign: "HaikusfromBuddah",
               team: "League of Legends",
               position: "Support",
               image: player4,
