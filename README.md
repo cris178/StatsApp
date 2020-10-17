@@ -10,6 +10,10 @@ HLG Stats is a mobile first React based esports stats app. It highlights the mos
 
 ![Imgur](https://i.imgur.com/bJmyk7f.png)
 
+The profile page uses a CSS filter for each player and features the last 10 games the player has partaken in detailing information such as their KDA ratio for each game and the champion portrait image. Not some champions do not display properly because of their awkward naming convention. For example Rek' Sai is an awkward name and the third party API that deals with champion portrait data does not follow League conventions therefore sometimes I have to accomodate for that by hardcoding how the API listed below handles the name for the API calls. 
+
+Another issue is that some players may have deleted their account. One in particular no longer loads in the app and doesn't show up in other third party stats app as well. It's safe to say this player may have deleted their account.
+
 # Image Size Requirements
 
 When the Media Team at HLG presents new esports portraits for each team there will be certain needs in order to properly integrate said
