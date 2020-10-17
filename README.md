@@ -6,7 +6,7 @@ Currently available for mobile devices at [HLGSTATS](https://stats.highlandergam
 
 HLG Stats is a mobile first React based esports stats app. It highlights the most recent matches held by Highlander Gaming's League of Legends team. In order to get the match stats the app uses the Riot League of Legends API. The API is a RESTful api which is used in conjunction with an AWS Lambda function. The site is hosted using Firebase hosting. 
 
-#Profile Page
+# Profile Page
 
 ![Imgur](https://i.imgur.com/bJmyk7f.png)
 
