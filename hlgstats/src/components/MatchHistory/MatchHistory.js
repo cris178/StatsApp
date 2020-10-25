@@ -17,9 +17,12 @@ class MatchHistory extends React.Component {
             wins: 0
         }
         this.getAvg = this.getAvg.bind(this);
+
     }
 
     async componentDidMount() {
+
+
         /***Retrieve the last 10 matches*****/
 
         let naming = this.props.account;

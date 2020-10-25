@@ -71,7 +71,7 @@ class App extends React.Component {
           LeagueA: [
             {
               name: "Ezekiel Kang",
-              ign: "ezepoon",
+              ign: "Faker",
               team: "League of Legends",
               position: "AD Carry",
               image: player1,
@@ -131,8 +131,10 @@ class App extends React.Component {
     this.getIGN = this.getIGN.bind(this);
     this.getAverage = this.getAverage.bind(this);
     this.setView = this.setView.bind(this);
+
     //this.getMatchHistory = this.getMatchHistory.bind(this);
   }
+
 
 
   async componentDidMount() {
@@ -182,6 +184,7 @@ class App extends React.Component {
     //Check Lambda function to see what key1 retrieves
     let ending = "?key1=1&key2=".concat(ign);
     console.log(ending);
+    //AWS ohio gatewaymanagement test
     fetch("" + ending).then(response => response.json()).then(json => {
       let body = json.body;
       let obj = JSON.parse(body);
@@ -255,6 +258,7 @@ class App extends React.Component {
 
     //Decide which screen to display. Either Home Screen or Player Profile Page
     if (checkScreen === 1) {
+
       displayScreen = <div className="block">
         <Header passUp={this.getIGN} />
         <Swipe passUp={this.getIGN} p1={slideP1} p2={slideP2} p3={slideP3} p4={slideP4} p5={slideP5} />
@@ -270,7 +274,8 @@ class App extends React.Component {
         <h2>Rainbow Six</h2>
       </div>
     } else if (checkScreen === 2) {
-      displayScreen = <div className="flexInit">
+
+      displayScreen = <div className="flexInit" ref={this.myRef}>
         <MatchHistory passUp={this.getAverage} account={this.state.accID} champList={this.state.champs} />
         <Profile name={this.state.name} passUp={this.setView} level={this.state.level} player={this.state.player} />
         <Overview kills={this.state.kills} deaths={this.state.deaths} assists={this.state.assists} wins={this.state.wins} />

@@ -8,8 +8,10 @@ class MatchHistory extends React.Component {
         this.state = {
             color: ""
         }
+
     }
     componentDidMount() {
+
         let rand = Math.floor((Math.random() * 2) + 0);
         if (rand === 0) {
             this.setState({
@@ -27,7 +29,7 @@ class MatchHistory extends React.Component {
 
 
         return (
-            <div className={this.state.color} >
+            <div className={this.state.color}>
                 <img className="cardCover" src={this.props.player.portrait}></img>
                 <div className="backButton" onClick={(() => {
                     setTimeout(() => {
