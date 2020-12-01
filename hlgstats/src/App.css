@@ -7,8 +7,9 @@ body{
 }
 
 .block::before{
-  content: "Switch to Mobile, Desktop version coming soon";
-  margin-left: 30%;
+  content: "Switch to mobile, desktop version coming soon.";
+  font-size: 15em;
+
 }
 .Header{
   visibility: hidden;
